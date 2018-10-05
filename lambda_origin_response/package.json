@@ -1,0 +1,16 @@
+{
+  "name": "lambda-image-optimizer",
+  "version": "1.0.0",
+  "description": "Image Optimizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hareku",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.316.0",
+    "sharp": "^0.20.8"
+  },
+  "devDependencies": {}
+}

@@ -3,7 +3,7 @@
 const querystring = require('querystring')
 const sharp = require('sharp')
 const aws = require('aws-sdk')
-const sizeof = require('object-sizeof')
+const sizeof = require('sizeof')
 
 const BUCKET = 'images.example.com'
 const CACHE_SECONDS = 31536000

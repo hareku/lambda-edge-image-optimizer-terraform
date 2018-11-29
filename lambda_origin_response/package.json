@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.316.0",
-    "sharp": "^0.20.8"
+    "sharp": "^0.20.8",
+    "sizeof": "^1.0.0"
   },
   "devDependencies": {}
 }

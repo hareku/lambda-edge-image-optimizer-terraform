@@ -3,6 +3,7 @@
 const querystring = require('querystring')
 const sharp = require('sharp')
 const aws = require('aws-sdk')
+const sizeof = require('object-sizeof')
 
 const BUCKET = 'images.example.com'
 const CACHE_SECONDS = 31536000
@@ -74,6 +75,13 @@ exports.handler = async (event, context, callback) => {
     }
 
     const buffer = await sharpBody.toBuffer()
+
+    // 1MB limit
+    // https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-lambda-at-edge
+    if (buffer.byteLength >= (1024 * 1000) - sizeof(response)) {
+      callback(null, response)
+      return
+    }
 
     response.status = '200'
     response.body = buffer.toString('base64')
